@@ -12,26 +12,3 @@ try {
     echo "Connection failed: ".$e->getMessage();
 }
 
-echo "hihi";
-
-    try {
-        
-
-        $query = "INSERT INTO `users`(`email`, `username`, `pwdhash`) VALUES ('[value-2]','[value-3]','[value-4]'); ";
-
-        $stmt = $pdo->prepare($query);
-        
-
-        $stmt->execute();
-
-        $pdo = null;
-        $stmt = null;
-
-        header("Location: index.php");
-
-        die();
-        
-
-    } catch (PDOException $e){
-        die("Query failed" .$e->getMessage());
-    }

@@ -5,12 +5,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $pwd = $_POST["pwd"];
     $email = $_POST["email"];
 
-    echo "hihi";
-
+   
     try {
         require_once "dbh.inc.php";
 
-        $query = "INSERT INTO users (email, username, pwdhash) VALUES (:email :username, :pwdhash); ";
+        $query = "INSERT INTO users (email, username, pwdhash) VALUES (:email, :username, :pwdhash); ";
 
         $stmt = $pdo->prepare($query);
         $stmt -> bindParam(":email",$email);
