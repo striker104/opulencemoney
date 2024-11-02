@@ -2,8 +2,9 @@
 var student = false;
 var income = -1;
 const studentMessageElement = document.getElementById('studentOnlyMessage');
-const incomeInputForm=document.getElementById('incomeInputField')
-const incomeMessageElement = document.getElementById('incomeMessage')
+const incomeInputForm=document.getElementById('incomeInputField');
+const incomeMessageElement = document.getElementById('incomeMessage');
+const signUpPrompt = document.getElementById('signUpPrompt');
 
 function toggleSlider(checkbox) {
   const slider = checkbox.nextElementSibling;
@@ -28,14 +29,15 @@ function updateStudentText(){
     }
 }
 
+//Upon submit button click
 function incomeForm(event){
   event.preventDefault(); // Prevent the form from submitting
   income = incomeInputForm.value;
   incomeMessageElement.innerHTML = "Yearly after-tax income of £" + income;
   incomeMessageElement.style.display='block';
   updateStudentText(); studentMessageElement.style.display = 'block'; // Show the element
-
   newChart();
+  signUpPrompt.style.display='block';
 
 }
 
