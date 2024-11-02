@@ -1,6 +1,7 @@
 // Declare a variable to hold the toggle state
 var student = false;
 var income = -1;
+let chart;
 const studentMessageElement = document.getElementById('studentOnlyMessage');
 const incomeInputForm=document.getElementById('incomeInputField');
 const incomeMessageElement = document.getElementById('incomeMessage');
@@ -44,7 +45,11 @@ function incomeForm(event){
 //Charts
 const ctx = document.getElementById('budgetPie');
 function newChart(){
-  new Chart(ctx, {
+  if (chart) {
+    chart.destroy(); //remove existing chart
+  }
+  chart = new Chart(ctx, {
+      
       type: 'doughnut',
       data: {
           labels: [
