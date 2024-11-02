@@ -244,11 +244,16 @@
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="">
                 <svg class="bi"><use xlink:href="#house-fill"></use></svg>
-                Dashboard
+                Dashboard -
               </a>
+              <?php
+                session_start();
+                
+                echo $_SESSION["username"];
+              ?>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="input.html">
+              <a class="nav-link d-flex align-items-center gap-2" href="input.php">
                 <svg class="bi"><use xlink:href="#graph-up"></use></svg>
                 Tracker
               </a>
@@ -256,7 +261,7 @@
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="">
                 <svg class="bi"><use xlink:href="#puzzle"></use></svg>
-                Integrations
+                Budget
               </a>
             </li>
           </ul>
@@ -329,141 +334,179 @@
         </div>
       </div>
 
-      <canvas class="my-4 w-100" id="myChart" width="1522" height="642" style="display: block; box-sizing: border-box; height: 514px; width: 1218px;"></canvas>
+      
 
-      <h2>Section title</h2>
-      <div class="table-responsive small">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,002</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,004</td>
-              <td>text</td>
-              <td>random</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,005</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>placeholder</td>
-            </tr>
-            <tr>
-              <td>1,006</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,007</td>
-              <td>placeholder</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>irrelevant</td>
-            </tr>
-            <tr>
-              <td>1,008</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,009</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,010</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,011</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,012</td>
-              <td>text</td>
-              <td>placeholder</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,013</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>visual</td>
-            </tr>
-            <tr>
-              <td>1,014</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,015</td>
-              <td>random</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>text</td>
-            </tr>
-          </tbody>
-        </table>
+      
+    
+      <div style="width: 50%; height:900px;"><canvas width = "50%" height = "37%" id="curvy"></canvas>
+      <canvas id="myLineChart"  width = "50%" height = "37%"></canvas>
+      <canvas id = "networthLine"></canvas>
+
+     
+    </div>
+      
+    <div style = " position:absolute; margin-left:44%; margin-top:-820px;"> <center><h3>Spending Categories</h3></center>
+    <canvas width="500px" id="myPieChart" ></canvas>
+    <p style="margin-top:80px;">This is the income, outcome and the different categories, including their percentage across the month.</p>
+      <center><h3 style = "margin-top:50px; margin-bottom:50px;">Networth</h3><center>
+    <canvas id="myPieChart2" width="500px" id="myPieChart"></canvas>
       </div>
+      
+
+
+      <canvas id="myBarChart" width="50%" ></canvas>
+
+      <canvas id="myPieChart" ></canvas>
+      
+      <canvas id="myPieChart2" width="500px" id="myPieChart"></canvas>
+      
+
+      
     </main>
   </div>
 </div>
 <script src="./Dashboard Template · Bootstrap v5.3_files/bootstrap.bundle.min.js.download" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <script src="./Dashboard Template · Bootstrap v5.3_files/chart.umd.js.download" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script><script src="./Dashboard Template · Bootstrap v5.3_files/dashboard.js.download"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      
+      const data = {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          label: 'Outgoing Over Time',
+          data: [200, 359, 280, 881, 126, 255, 540],
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+       },{label: 'Income Over Time',
+              data: [800, 1080, 900, 1295, 965, 660, 1045],
+              borderColor: 'rgba(255, 99, 132, 1)',
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              fill: true,
+              tension: 0.4
+            }]
+        
+    };
+
+      const config = new Chart( document.getElementById('curvy'),{
+      type: 'line',
+      data: data,
+      options: {
+        animations: {
+          tension: {
+            duration: 1000,
+            easing: 'linear',
+            from: 1,
+            to: 0,
+            loop: false
+          }
+        },
+        scales: {
+              y: { // defining min and max so hiding the dataset does not change scale range
+                min: 0,
+                max: 2000
+              }
+            }
+          }
+    });
+
+        
+          // Wait for the document to be fully loaded
+      document.addEventListener("DOMContentLoaded", function() {
+      // Get the canvas element
+      const ctx = document.getElementById('myLineChart').getContext('2d');
+
+    // Create the line chart
+    const myBarChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Groceries', 'Holidays', 'Household', 'Transport',"etc"],
+            datasets: [{
+                label: 'Money Spent on Categories',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: true,
+                 // Makes the line smoother
+            }]
+        },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+
+        const dataPie = {
+          labels: [ 'Groceries', 'Holidays', 'Household', 'Transport',"etc" 
+          ],
+          datasets: [{
+            label: 'My First Dataset',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            backgroundColor: [
+              'rgb(112, 140, 120)',
+              'rgb(147, 187, 217)',
+              'rgb(138, 144, 209)',
+              'rgb(173, 125, 209)',
+              'rgb(224, 135, 197)'
+              
+            ],
+            
+            hoverOffset: 4
+          }]
+        };
+        const dataPie2 = {
+          labels: [ 'Santander', 'HSBC',"Nationwide"
+          ],
+          datasets: [{
+            label: 'My First Dataset',
+            data: [65, 15, 20],
+            backgroundColor: [
+              'rgb(112, 140, 120)',
+              'rgb(147, 187, 217)',
+              'rgb(138, 144, 209)',
+              'rgb(173, 125, 209)',
+              'rgb(224, 135, 197)'
+              
+            ],
+            
+            hoverOffset: 4
+          }]
+        };
+
+      const pieChart = new Chart  (document.getElementById("myPieChart"), {
+        type: 'doughnut',
+        data: dataPie,
+      });
+
+      const pieChart2 = new Chart  (document.getElementById("myPieChart2"), {
+        type: 'doughnut',
+        data: dataPie2,
+      });
+
+      const labels = Utils.months({count: 7});
+      const data3 = {
+        labels: labels,
+        datasets: [{
+          label: 'My First Dataset',
+          data: [65, 59, 80, 81, 56, 55, 40],
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1
+        }]
+      };
+      const networthLine = new Chart(document.getElementById("networthLine"),{
+        type: 'line',
+        data: data3,
+      });
+
+</script>
+
+
 
 </body></html>
