@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+          <form class="register-form tw"name="signupform">
+            <input type="text" placeholder="name" class="tw" name="user" id="registerFormUser"/>
+            <input type="password" placeholder="password" class="tw" name="sinpass" id="registerFormPass"/>
+            <input type="text" placeholder="email address" class="tw" name="email" id="email"/>
+            <button>create</button>
+            <p class="message">Already registered? <a href="#"style="color: #7851a9;">Sign In</a></p>
+          </form>
+          <form class="login-form" name="loginform" onsubmit="loginsubmit">
+            <input type="text" placeholder="username" class="tw" name="username" id="loginFormUser"/>
+            <input type="password" placeholder="password" class="tw" name="logpass"id="loginFormPass"/>
+            <button>login</button>
+            <p class="message" style="color: white;">Not registered? <a href="#" style="color: #7851a9;">Create an account</a></p>
+          </form>
+        </div>
+    </div>
+    <script src="signup.js"></script>
+</body>
+</html>
