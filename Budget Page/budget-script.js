@@ -3,6 +3,7 @@ var student = false;
 var income = -1;
 const studentMessageElement = document.getElementById('studentOnlyMessage');
 const incomeInputForm=document.getElementById('incomeInputField')
+const incomeMessageElement = document.getElementById('incomeMessage')
 
 function toggleSlider(checkbox) {
   const slider = checkbox.nextElementSibling;
@@ -14,14 +15,10 @@ function toggleSlider(checkbox) {
   // Apply the corresponding styles based on the state
   slider.style.backgroundColor = student ? "#2196F3" : "#ccc";
   handle.style.transform = student ? "translateX(26px)" : "translateX(0)";
-  
-
-  //temp: change student text
 
   //Display student text?
   if (student) {
     studentMessageElement.style.display = 'block'; // Show the element
-    studentMessageElement.innerHTML=income //display the student's income
   } else {
     studentMessageElement.style.display = 'none'; // Hide the element
   }
@@ -29,5 +26,7 @@ function toggleSlider(checkbox) {
 
 function incomeForm(){
   income= incomeInputForm.value;
+  incomeMessageElement.innerHTML=income
+
 }
 
