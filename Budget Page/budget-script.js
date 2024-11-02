@@ -18,15 +18,20 @@ function toggleSlider(checkbox) {
 
   //Display student text?
   if (student) {
+    studentMessageElement.innerHTML="Student"
     studentMessageElement.style.display = 'block'; // Show the element
   } else {
     studentMessageElement.style.display = 'none'; // Hide the element
   }
 }
 
-function incomeForm(){
-  income= incomeInputForm.value;
-  incomeMessageElement.innerHTML=income
+function incomeForm(event){
+  event.preventDefault(); // Prevent the form from submitting
+  income = incomeInputForm.value;
+  incomeMessageElement.innerHTML=("Yearly after-tax income of", income)
+  incomeMessageElement.style.display='block';
 
 }
+
+
 
