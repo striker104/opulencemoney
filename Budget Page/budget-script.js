@@ -52,9 +52,11 @@ function newChart(){
 
   //change labels, data, based on variable student
   if (student){
-    labels = ["Rent", "Food", "Transport", "Course materials & extra fees", "Essentials (e.g. toiletries)", "Entertainment", "Emergency Fund" ]
-    data = [0.3*income, 0.2*income, 0.15*income, 0.05*income, 0.15*income, 0.15*income, 0.05*income]
+    labels = ["Rent", "Food", "Transport", "Course materials & extra fees", "Essentials", "Entertainment", "Emergency Fund" ];
+    data = [0.3*income, 0.2*income, 0.15*income, 0.05*income, 0.15*income, 0.15*income, 0.05*income];
   } else{
+    labels = ["Housing", "Transportation", "Food & Essentials", "Utilities", "Insurance", "Debt Repayment", "Savings & Investments", "Entertainment & Leisure", "Charity/Giving"];
+    data = [0.25*income, 0.1*income, 0.15*income, 0.05*income, 0.05*income, 0.1*income, 0.15*income, 0.05*income, 0.05*income];
 
   }
 
