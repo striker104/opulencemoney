@@ -15,14 +15,17 @@ function toggleSlider(checkbox) {
   // Apply the corresponding styles based on the state
   slider.style.backgroundColor = student ? "#2196F3" : "#ccc";
   handle.style.transform = student ? "translateX(26px)" : "translateX(0)";
+  updateStudentText();
 
-  //Display student text?
-  if (student) {
-    studentMessageElement.innerHTML="Student"
-    studentMessageElement.style.display = 'block'; // Show the element
-  } else {
-    studentMessageElement.style.display = 'none'; // Hide the element
-  }
+
+}
+
+function updateStudentText(){
+    if (student) {
+      studentMessageElement.innerHTML="University Student";
+    } else {
+      studentMessageElement.innerHTML="Not a University Student";
+    }
 }
 
 function incomeForm(event){
@@ -30,7 +33,9 @@ function incomeForm(event){
   income = incomeInputForm.value;
   incomeMessageElement.innerHTML = "Yearly after-tax income of £" + income;
   incomeMessageElement.style.display='block';
-  newChart()
+  updateStudentText(); studentMessageElement.style.display = 'block'; // Show the element
+
+  newChart();
 
 }
 
@@ -41,13 +46,13 @@ function newChart(){
       type: 'doughnut',
       data: {
           labels: [
-          'Red',
-          'Blue',
-          'Yellow'
+          'Essentials',
+          'Lifestyle',
+          'Rent'
         ],
         datasets: [{
           label: 'My First Dataset',
-          data: [123, 123, 123],
+          data: [income*0.34, income*0.3, income*0.5],
           backgroundColor: [
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
