@@ -45,28 +45,56 @@ function incomeForm(event){
 //Charts
 const ctx = document.getElementById('budgetPie');
 function newChart(){
+  //remove existing chart
   if (chart) {
-    chart.destroy(); //remove existing chart
+    chart.destroy(); 
   }
+
+  //change labels, data, based on variable student
+  if (student){
+    labels = ["Rent", "Food", "Transport", "Course materials & extra fees", "Essentials (e.g. toiletries)", "Entertainment", "Emergency Fund" ]
+    data = [0.3*income, 0.2*income, 0.15*income, 0.05*income, 0.15*income, 0.15*income, 0.05*income]
+  } else{
+
+  }
+
   chart = new Chart(ctx, {
-      
       type: 'doughnut',
       data: {
-          labels: [
-          'Essentials',
-          'Lifestyle',
-          'Rent'
-        ],
+          labels: labels,
         datasets: [{
           label: 'My First Dataset',
-          data: [income*0.34, income*0.3, income*0.5],
+          data: data,
           backgroundColor: [
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
-          ],
+            'rgb(255, 205, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(153, 102, 255)',
+            'rgb(255, 159, 64)',
+            'rgb(128, 128, 0)',
+            'rgb(0, 128, 128)',
+            'rgb(218, 112, 214)',
+            'rgb(70, 130, 180)'
+          ]
+          ,
           hoverOffset: 4
         }]},
+
+        options: {
+          plugins: {
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  // Customize tooltip to show the label and the value
+                  let label = context.label || '';
+                  let value = context.raw || 0;
+                  return `${label}: £${value.toFixed(2)}`;
+                }
+              }
+            }
+          }
+        }
       
       });
       ctx.style.display='block';
