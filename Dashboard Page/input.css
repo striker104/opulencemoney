@@ -1,0 +1,48 @@
+.inp-label{
+    font-size: 27px;
+}
+.input-data{
+    border: none;
+    padding: 5px 2px;
+    width: 340px;
+}
+.input-data:hover{
+    background-color: rgb(129, 161, 208);
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.categories{
+    width: 350px;
+    height: 35px;
+    border: none;
+    border-radius: 7px;
+    
+    
+}
+.categories:hover{
+    background-color: rgb(129, 161, 208);
+    cursor: pointer;
+    
+}
+.add-button{
+    margin-top: 30px;
+    width: fit-content;
+    border: solid;
+    background: none;
+    color: rgb(129, 161, 208);
+    cursor: pointer;
+    font-size: 22px;
+    padding: 0px 15px;
+    font-weight: bold;
+}
+.add-button:hover{
+    background-color: black;
+}
+
+.networth-container{
+    margin-top: 50px;
+}
