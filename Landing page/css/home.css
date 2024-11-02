@@ -2947,7 +2947,7 @@ textarea.form-control-lg {
 
 .btn-light {
   --bs-btn-color: #000;
-  --bs-btn-bg: #f8f9fa;
+  --bs-btn-bg: #000407;
   --bs-btn-border-color: #f8f9fa;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #d3d4d5;
@@ -8126,7 +8126,7 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color:#000 !important;
 }
 
 .bg-secondary {
@@ -10836,4 +10836,11 @@ header {
 section {
   padding-top: 9rem;
   padding-bottom: 9rem;
+}
+
+.theme1{ color:#7851a9;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+
+ .bg-gradientr {
+  background: linear-gradient(to bottom,#000, RGBA(33, 37, 41, var(--bs-bg-opacity, 1)))
 }
