@@ -351,17 +351,39 @@
       </div>
 
       <h2>Your Financials</h2>
+
+      <!--Input-->
       <h3>Are you a student?</h3>
-    
-      <div ><!--Student select button--><label style="position: relative; display: inline-block; width: 60px; height: 34px;" aria-label="Toggle switch">
+      No
+      <div style="display: inline-flex;"><!--Student select button--><label style="position: relative; display: inline-block; width: 60px; height: 34px;" aria-label="Toggle switch">
         <input type="checkbox" style="opacity: 0; width: 0; height: 0;" onclick="toggleSlider(this)">
         <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: background-color .4s;">
           <span style="position: absolute; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: transform .4s;"></span>
         </span>
       </label>
       </div>
+      Yes
+      <p></p>
+      <h3>Input your income:</h3>
+      <form  onsubmit="incomeForm(event)" >
+        <div>
+          <label for="Income">Yearly Income (after tax): £</label>
+          <input type="number" name="income" id="incomeInputField" required  placeholder=28,000> 
+        </div>
+        <div>
+          <input type="submit">
+        </div>
+      </form>
+      
+
+      <!--/Input-->
+
+
+      <p></p>
       <!--Text to display to students only-->
-      <div id="studentOnlyMessage" style="display: none;">Student status confirmed</div>
+      <div id="studentOnlyMessage" style="display: none;"> Student Status pending</div>
+      <!--Text to display to income-->
+      <div id="incomeMessage" style="display: none;">Income pending</div>
     
       
     
