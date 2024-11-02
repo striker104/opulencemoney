@@ -10841,6 +10841,9 @@ section {
 .theme1{ color:#7851a9;
  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
 
+ .theme2{ color:#7851a9;
+  font-family:Verdana, Geneva, Tahoma, sans-serif, Geneva, Verdana, sans-serif;}
+
  .bg-gradientr {
   background: linear-gradient(to bottom,#000, RGBA(33, 37, 41, var(--bs-bg-opacity, 1)))
 }
