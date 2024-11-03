@@ -330,7 +330,7 @@
       <p>Answer these easy questions to get a personalised budget suggestion! No account login required for this tool.</p>
 
       <!--Input-->
-      <h3>Are you a University student?</h3>
+      <h3>Are you a University student?*</h3>
       No  <div style="display: inline-flex;"><!--Student select button--><label style="position: relative; display: inline-block; width: 60px; height: 34px;" aria-label="Toggle switch">
         <input type="checkbox" style="opacity: 0; width: 0; height: 0;" onclick="toggleSlider(this)">
         <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: background-color .4s;">
@@ -340,13 +340,25 @@
       </div>
       Yes
       <p></p>
-      <h3>Input your income:</h3>
+      <h3>Input income and more:</h3>
       <form  onsubmit="incomeForm(event)" >
         <div>
-          <label for="Income">Yearly Income (after tax): £</label>
+          <label for="Income">Yearly Income (after tax)*: £</label>
           <input type="number" name="income" id="incomeInputField" required  placeholder=28,000> 
         </div>
         <div>
+        <label for="Outgoing">Yearly Total Outgoings: £</label>
+        <input type="number" name="outgoing" id="outgoingInputField"  placeholder=22,000> 
+      </div><div>
+        <label for="Income">Top Outgoing #1: </label>
+        <input type="text" name="topOutgoing1" id="topOutgoingInputField1"  placeholder=Rent> 
+        </div><div>
+          <label for="Income">Top Outgoing #2: </label>
+          <input type="text" name="topOutgoing2" id="topOutgoingInputField2"  placeholder=Groceries> 
+          </div>
+          <label for="Income">Top Outgoing #3: </label>
+          <input type="text" name="topOutgoing3" id="topOutgoingInputField3"  placeholder=Entertainment> 
+          </div><div>
           <input type="submit">
         </div>
       </form>
