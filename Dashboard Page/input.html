@@ -105,6 +105,18 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+      
+
+      table, th, td {
+        border: 1px solid white;
+        border-collapse: collapse;
+        
+      }
+      
+      
+      
+
+
     </style>
 
     
@@ -243,7 +255,7 @@
         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="dashboard.php">
+              <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="dashboard.html">
                 <svg class="bi"><use xlink:href="#house-fill"></use></svg>
                 Dashboard
               </a>
@@ -334,13 +346,16 @@
 
       <h2>Add Data</h2>
       <div class="input-container">
-        
-        <div>
+        <div class="grid-container">
+          <div style="width: 50%;"><input type="date"></div>
+       
+        <div >
           <p class="inp-label">Income *</p>
           <input id = "inp-income" class ="input-data" type="text">
           <label for="inp-income">£</label>
           <p></p>
         </div>
+      </div>
 
         <div class="grid-container">
           <div>
@@ -352,6 +367,10 @@
                 <option value="opel">Household</option>
                 <option value="audi">Transport</option>
               </select>
+
+          </div>
+          <div>
+            
           </div>
             
           </div>
@@ -367,14 +386,31 @@
           <button class="add-button">Add</button>
         </div>
 
-        <div id="display-data" class="grid-container">
+        <div id="display-data" >
           
+          <table style="width:100%; margin-top:30px;">
+            <tr>
+              <th>Incoming (£)</th>
+              <th>Outgoing (£)</th>
+              <th>Date(mm/yyyy)</th>
+              <th>Categories</th>
+            </tr>
+            <tr>
+              <td>1000</td>
+              <td>300</td>
+              <td>04/2024</td>
+              <td>Groceries</td>
+            </tr>
+          
+          </table>
+        
         </div>
 
         <div class="networth-container">
           <h3>Net Worth</h3>
         </div>
         
+
         
 
       </div>
