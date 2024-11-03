@@ -6,6 +6,13 @@ const studentMessageElement = document.getElementById('studentOnlyMessage');
 const incomeInputForm=document.getElementById('incomeInputField');
 const incomeMessageElement = document.getElementById('incomeMessage');
 const signUpPrompt = document.getElementById('signUpPrompt');
+const outgoingField=document.getElementById('outgoingInputField');
+const topOutgoing1=document.getElementById('topOutgoingInputField1');
+const topOutgoing2=document.getElementById('topOutgoingInputField2');
+const topOutgoing3=document.getElementById('topOutgoingInputField3');
+const AIbutton=document.getElementById('AIbutton')
+var AIprompt = "error, blank prompt";
+
 
 function toggleSlider(checkbox) {
   const slider = checkbox.nextElementSibling;
@@ -34,12 +41,18 @@ function updateStudentText(){
 function incomeForm(event){
   event.preventDefault(); // Prevent the form from submitting
   income = incomeInputForm.value;
+  outgoing=outgoingField.value;
+  out1=topOutgoing1.value;
+  out2=topOutgoing2.value;
+  out3=topOutgoing3.value;
   incomeMessageElement.innerHTML = "Yearly after-tax income of £" + income;
   incomeMessageElement.style.display='block';
   updateStudentText(); studentMessageElement.style.display = 'block'; // Show the element
   newChart();
   signUpPrompt.style.display='block';
-
+  AIprompt= `Act as a personal finance advisor, called Opulence AI. Requirements: Write no more than one paragraph, You introduce yourself as Opulence AI, You provide personalised budgeting feedback based on the inputs, You compare your suggested budget to their current spending, You provide at least 3 actionable points to achieve this new budget from their current outgoings, You always highlight how it's beneficial to save more, You always recommend using the Opulence Resource Page for savings and tax optimisation tips. Inputs: £${income}, Yearly outgoing: £${outgoing}, Top 3 spends: ${out1} ${out2} ${out3}`
+  navigator.clipboard.writeText(AIprompt)  
+  AIbutton.style.display='block';
 }
 
 //Charts
