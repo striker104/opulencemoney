@@ -340,18 +340,13 @@
     
       <div style="width: 50%; height:900px;"><canvas width = "50%" height = "37%" id="curvy"></canvas>
       <canvas id="myLineChart"  width = "50%" height = "37%"></canvas>
-      <canvas id = "networthLine"></canvas>
 
      
     </div>
-
-    
       
     <div style = " position:absolute; margin-left:44%; margin-top:-900px;"> <center><h3>Spending Categories</h3></center>
     <canvas width="500px" id="myPieChart" ></canvas>
     <p style="margin-top:80px;">This is the income, outcome and the different categories, including their percentage across the month.</p>
-      <center><h3 style = "margin-top:50px; margin-bottom:50px;">Networth</h3><center>
-    <canvas id="myPieChart2" width="500px" id="myPieChart"></canvas>
       </div>
       
 
@@ -360,7 +355,6 @@
 
       <canvas id="myPieChart" ></canvas>
       
-      <canvas id="myPieChart2" width="500px" id="myPieChart"></canvas>
       
 
       
@@ -462,69 +456,12 @@
             hoverOffset: 4
           }]
         };
-        const dataPie2 = {
-          labels: [ 'Santander', 'HSBC',"Nationwide"
-          ],
-          datasets: [{
-            label: 'My First Dataset',
-            data: [65, 15, 20],
-            backgroundColor: [
-              'rgb(112, 140, 120)',
-              'rgb(147, 187, 217)',
-              'rgb(138, 144, 209)',
-              'rgb(173, 125, 209)',
-              'rgb(224, 135, 197)'
-              
-            ],
-            
-            hoverOffset: 4
-          }]
-        };
 
       const pieChart = new Chart  (document.getElementById("myPieChart"), {
         type: 'doughnut',
         data: dataPie,
       });
 
-      const pieChart2 = new Chart  (document.getElementById("myPieChart2"), {
-        type: 'doughnut',
-        data: dataPie2,
-      });
-
-      const labels3 = Utils.months({count: 7});
-      const data3 = {
-        labels: ["2022", "2023", "2024"] ,
-        datasets: [{
-          label: 'My First Dataset',
-          data: [650000, 200000, 800000],
-          fill: false,
-          borderColor: 'rgb(75, 192, 192)',
-          tension: 0.1
-        }]
-      };
-      
-
-      const networthLine = new Chart( document.getElementById("networthLine"),{
-      type: 'line',
-      data: data3,
-      options: {
-        animations: {
-          tension: {
-            duration: 1000,
-            easing: 'linear',
-            from: 1,
-            to: 0,
-            loop: false
-          }
-        },
-        scales: {
-              y: { // defining min and max so hiding the dataset does not change scale range
-                min: 0,
-                max: 200
-              }
-            }
-          }
-    });
 
 </script>
 
