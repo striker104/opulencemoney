@@ -344,8 +344,10 @@
 
      
     </div>
+
+    
       
-    <div style = " position:absolute; margin-left:44%; margin-top:-820px;"> <center><h3>Spending Categories</h3></center>
+    <div style = " position:absolute; margin-left:44%; margin-top:-900px;"> <center><h3>Spending Categories</h3></center>
     <canvas width="500px" id="myPieChart" ></canvas>
     <p style="margin-top:80px;">This is the income, outcome and the different categories, including their percentage across the month.</p>
       <center><h3 style = "margin-top:50px; margin-bottom:50px;">Networth</h3><center>
@@ -489,21 +491,40 @@
         data: dataPie2,
       });
 
-      const labels = Utils.months({count: 7});
+      const labels3 = Utils.months({count: 7});
       const data3 = {
-        labels: labels,
+        labels: ["2022", "2023", "2024"] ,
         datasets: [{
           label: 'My First Dataset',
-          data: [65, 59, 80, 81, 56, 55, 40],
+          data: [650000, 200000, 800000],
           fill: false,
           borderColor: 'rgb(75, 192, 192)',
           tension: 0.1
         }]
       };
-      const networthLine = new Chart(document.getElementById("networthLine"),{
-        type: 'line',
-        data: data3,
-      });
+      
+
+      const networthLine = new Chart( document.getElementById("networthLine"),{
+      type: 'line',
+      data: data3,
+      options: {
+        animations: {
+          tension: {
+            duration: 1000,
+            easing: 'linear',
+            from: 1,
+            to: 0,
+            loop: false
+          }
+        },
+        scales: {
+              y: { // defining min and max so hiding the dataset does not change scale range
+                min: 0,
+                max: 200
+              }
+            }
+          }
+    });
 
 </script>
 
