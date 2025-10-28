@@ -4,8 +4,6 @@ Opulence Money is a comprehensive web application designed to empower users to m
 
 This project was developed as part of the **DurHack Hackathon**
 
-[Image of Opulence Money Dashboard]
-
 **View the Live Demo:** [https://striker104.github.io/opulencemoney/Landing%20page/home.html](https://striker104.github.io/opulencemoney/Landing%20page/home.html)
 
 ---
